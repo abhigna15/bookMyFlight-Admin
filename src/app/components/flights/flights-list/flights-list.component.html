@@ -1,0 +1,27 @@
+<form>
+    <div class="container" my-5>
+        <h1 class = "mb-3">Flights</h1>
+    
+        <table class = "table" *ngIf="flights && flights.length > 0">
+            <thead>
+                <tr>
+                    <th>Flight ID</th>
+                    <th>Flight Name</th>
+                    <th>Seat Count</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor = "let flight of flights">
+                    <td>{{ flight.flightId }}</td>
+                    <td>{{ flight.flightName }}</td>
+                    <td>{{ flight.seatCount }}</td>
+                    <td><a [routerLink]="['/flights', 'edit', flight.flightId]">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf = "!flights || flights.length <= 0">No Flights Found!</p>
+    </div>
+
+</form>

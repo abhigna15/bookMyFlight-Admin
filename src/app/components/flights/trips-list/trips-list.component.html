@@ -1,0 +1,32 @@
+<div class="container" my-5>
+    <h1 class = "mb-3">Trips</h1>
+
+    <table class = "table" *ngIf="trips && trips.length > 0">
+        <thead>
+            <tr>
+                <th>Trip ID</th>
+                <th>Flight ID</th>
+                <th>Route Name</th>
+                <th>Source Date</th>
+                <th>Destination Date</th>
+                <th>Price</th>
+                <th>Passenger Count</th>
+                <th>TripRoute_Id</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor= "let trip of trips; let i = index;">
+                <td>{{ trip.id }}</td>
+                <td>{{ trip.flight_Id }}</td>
+                <td>{{ trip.routeName }}</td>
+                <td>{{ trip.sourceTime }}</td>
+                <td>{{ trip.destinationTime }}</td>
+                <td>{{ trip.price }}</td>
+                <td>{{ trip.passengerCount }}</td>
+                <td>{{ trip.tripRoute_Id }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf = "!trips || trips.length <= 0">No Trips Found!</p>
+</div>

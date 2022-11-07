@@ -1,0 +1,61 @@
+<div class=""container my-5>
+    <h1 class="mb-3">Add New Trip</h1>
+
+    <div class="row justify-content-center">
+        <div class = "col-6">
+            <form #form="ngForm" (ngSubmit)="addTrip()">
+                <div class="mb-3">
+                    <label for="Flight_Id" class="form-label">Flight ID</label>
+                    <input type="text" class="form-control" id="Flight_Id"
+                    name = "Flight_Id" [(ngModel)]= "addTripRequest.flight_Id">
+                </div>
+<!--
+                <div class="mb-3">
+                    <form class="mb-3">
+                        <input id="RouteName" type="text" formControlName="RouteName" [(ngModel)]= "addTripRequest.RouteName"> 
+                        <label for="RouteName" class="form-label">Route</label>
+                        <select class="form-control select2 select2-hidden-accessible" routename-id="1" tabindex="-1" aria-hidden="true">
+                        <option>Select</option> 
+                        <option routename-id="1">BLR - AMD</option> 
+                        <option routename-id="2">BLR - HYD</option> 
+                        <option routename-id="3">BLR - CCU</option> 
+                        <option routename-id="4">DEL - AMD</option> 
+                        <option routename-id="5">DEL - HYD</option> 
+                        <option routename-id="6">DEL - CCU</option> 
+                        </select>
+                    </form>
+                </div>
+-->
+
+                <div class="mb-3">
+                    <label for="RouteName" class="form-label">Route Name</label>
+                    <input type="text" class="form-control" id="RouteName" name = "RouteName" [(ngModel)]= "addTripRequest.routeName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="SourceTime" class="form-label">Source Time</label>
+                    <input type="text" class="form-control" id="SourceTime"
+                    name = "SourceTime" [(ngModel)]= "addTripRequest.sourceTime">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="DestinationTime" class="form-label">DestinationTime</label>
+                    <input type="text" class="form-control" id="DestinationTime"
+                    name = "DestinationTime" [(ngModel)]= "addTripRequest.destinationTime">
+                </div>
+
+                <div class="mb-3">
+                    <label for="Route_Price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="Route_Price"                    
+                    name = "Route_Price" [(ngModel)]= "addTripRequest.price">
+                </div>
+                <div class="mb-3">
+                    <label for="PassengerCount" class="form-label">Seat Count</label>
+                    <input type="text" class="form-control" id="PassengerCount"                    
+                    name = "PassengerCount" [(ngModel)]= "addTripRequest.passengerCount">
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>        
+    </div>
+</div>
